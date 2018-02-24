@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# variables
+
+# environtment variable
+echo "$HOME" # case-sensative
+echo "$home" # prints empty line
+# script variable
+message="You shall not pass!"
+echo "And Gendalf said, \"$message\""
+
+# another var
+price=99.9
+currency="\$" #escaping the '$'
+echo "It'll cost you ${currency}${price}!"
+
+# extract info from pwd command use `cmd` or $(cmd)
+myDir=`pwd` 
+myDir2=$(pwd)
+echo "I'm in '${myDir}'"
+echo "I'm in '${myDir2}'"
+
+
+# 50 shades of maths
+
+# addition/subtraction
+result=$(5 + 15) # just prints command not found
+result=$((5 + 15))
+echo $result
+
+result=$((5 - 15)) # overwriting variables
+echo $result
+
+# multiplication/division
+
+result=$((5 * 5))
+echo $result
+
+var=10
+echo $(($var * 5)) # using variable into $(())
+
+result=$((7 / 5)) # integer divison
+echo $result
+
+echo "Ok, 2 + 2 * 2 = $((2 + 2 * 2))" # without variables
+

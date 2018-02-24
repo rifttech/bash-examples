@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# !	logical negation
+# &&	logical AND
+# ||	logical OR
+# 0 is False
+# 1 is True
+# logical operators precedence
+# !      High
+# && (+) Medium
+# || (-) Low
+#
+#Logical Equivalences
+
+# A B | A && B
+echo "A | B | A && B"
+echo "0 | 0 | $((0 && 0))"
+echo "0 | 1 | $((0 && 1))"
+echo "1 | 0 | $((1 && 0))"
+echo "1 | 1 | $((1 && 1))"
+echo
+
+# A B | A || B
+echo "A | B | A && B"
+echo "0 | 0 | $((0 || 0))"
+echo "0 | 1 | $((0 || 1))"
+echo "1 | 0 | $((1 || 0))"
+echo "1 | 1 | $((1 || 1))"
+echo
+
+# A | !A
+echo "A | !A"
+echo "0 | $((!0))"
+echo "1 | $((!1))"
+echo
+
+# A | B | A NOR B Peirce's arrow !(A OR B)
+echo "A | B | A NOR B"
+echo "0 | 0 | $(( !(0 || 0) ))"
+echo "0 | 1 | $(( !(0 || 1) ))"
+echo "1 | 0 | $(( !(1 || 0) ))"
+echo "1 | 1 | $(( !(1 || 1) ))"
+echo
+
+
+# A | B | A NAND B , Sheffer's stroke !(A OR B)
+echo "A | B | A NAND B"
+echo "0 | 0 | $(( !(0 && 0) ))"
+echo "0 | 1 | $(( !(0 && 1) ))"
+echo "1 | 0 | $(( !(1 && 0) ))"
+echo "1 | 1 | $(( !(1 && 1) ))"
+echo
+
+
+# Commutative law
+# p && q <=> q && p
+# p || q <=> q || p 
+p=0
+q=1
+r=1
+echo "let p is $p and q is $q"
+echo "p AND q <=> q AND p"
+echo "$((p && q)) <=> $((q && p))"
+echo "p OR q <=> q OR p"
+echo "$((p || q)) <=> $((q || p))"
+
+# Associative law
+echo
+echo "let p is $p, q is $q, and r is $r"
+echo "(p AND q) AND r <=> (p AND q) AND r"
+echo "$(( p && (q && r) )) <=> $(( (p && q) && r ))"
+echo "(p OR q) OR r <=> (p OR q) OR r"
+echo "$(( p || (q || r) )) <=> $(( (p || q) || r ))"
+
+# Distributive law
+echo
+echo "let p is $p, q is $q, and r is $r"
+echo "p AND (q OR r) <=> (p AND q) OR (p AND r)"
+echo "$(( p && (q || r) )) <=> $(( (p && q) || (p && r)))"
+echo "p OR (q AND r) <=> (p OR q) AND (p OR r)"
+echo "$(( p || (q && r) )) <=> $(( (p || q) && (p || r)))"
+
+# Identy
+echo
+echo "p AND 'TRUE' <=> p"
+echo "$((p && 1)) <=> $p"
+echo "p OR 'FALSE' <=> p"
+echo "$((p || 0)) <=> $p"
+
+# Negation
+echo
+echo "p OR NOT p <=> 'TRUE'"
+echo "$((p || !p)) <=> 'TRUE'"
+
+echo
+echo "p AND NOT p <=> 'FALSE'"
+echo "$((p && !p)) <=> 'FALSE'"
+
+# Double Negative
+echo
+echo "NOT NOT p <=> p"
+echo "$((!!p)) <=> $p"
+
+#Idempotent
+
+echo
+echo "p AND p <=> p"
+echo "$((p && p)) <=> $p"
+
+echo
+echo "p OR p <=> p"
+echo "$((p || p)) <=> $p"
+
+
+# Universal Bound
+echo
+echo "p OR 'TRUE' <=> 'TRUE'"
+echo "$((p || 1)) <=> 1"
+echo "p AND 'FALSE' <=> 'FALSE'"
+echo "$((p || 0)) <=> 0"
+
+# De Morgan's
+echo
+echo "NOT (p AND q) <=> (NOT p) OR (NOT q)"
+echo "$((!(p && q))) <=> $(( (!p) || (!q) ))"
+echo "NOT (p OR q) <=> (NOT p) AND (NOT q)"
+echo "$((!(p || q))) <=> $(( (!p) && (!q) ))"
+# Absorption
+echo
+echo "p OR (p AND q) <=> p"
+echo "$(( p || (p && q) )) <=> $p"
+echo "p AND (p OR q) <=> p"
+echo "$(( p && (p || q) )) <=> $p"
+
+# Conditional => means implication
+echo
+echo "p => q <=> (NOT p AND q)"
+echo "'$p => $q' <=> $(( !p && q ))"
+echo "NOT(p => q) <=> (p OR NOT q)"
+echo "'!($p => $q)' <=> $(( p || !q ))"

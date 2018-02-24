@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# Comparisons
+# <	comparison: less than
+# >	comparison: greater than
+# <=	comparison: less than or equal
+# >=	comparison: greater than or equal
+# ==	equality
+# !=	inequality
+# 0 means FALSE
+# 1 means TRUE
+echo "''a' is less than 'b'"
+a=1
+b=1
+echo "'$a < $b = $(($a < $b))'"
+
+a=1
+b=2
+echo "'$a < $b = $(($a < $b))'"
+
+a=2
+b=1
+echo "'$a < $b = $(($a < $b))'"
+
+echo
+echo "'a' is greater than 'b'"
+a=1
+b=1
+echo "'$a > $b = $(($a > $b))'"
+
+a=1
+b=2
+echo "'$a > $b = $(($a > $b))'"
+
+a=2
+b=1
+echo "'$a > $b = $(($a > $b))'"
+
+echo
+echo "'a' is less or equal than 'b'"
+a=1
+b=1
+echo "'$a <= $b = $(($a <= $b))'"
+
+a=1
+b=2
+echo "'$a <= $b = $(($a <= $b))'"
+
+a=2
+b=1
+echo "'$a <= $b = $(($a <= $b))'"
+
+echo
+echo "'a' is greater or equal than 'b'"
+a=1
+b=1
+echo "'$a >= $b = $(($a >= $b))'"
+
+a=1
+b=2
+echo "'$a >= $b = $(($a >= $b))'"
+
+a=2
+b=1
+echo "'$a >= $b = $(($a >= $b))'"
+
+echo
+echo "'a' is equal than 'b'"
+a=1
+b=1
+echo "'$a == $b = $(($a == $b))'"
+
+a=1
+b=2
+echo "'$a == $b = $(($a == $b))'"
+
+a=2
+b=1
+echo "'$a == $b = $(($a == $b))'"
+
+echo
+echo "'a' is not equal than 'b'"
+a=1
+b=1
+echo "'$a != $b = $(($a != $b))'"
+
+a=1
+b=2
+echo "'$a != $b = $(($a != $b))'"
+
+a=2
+b=1
+echo "'$a != $b = $(($a != $b))'"

@@ -1,0 +1,37 @@
+#!/bin/bash
+a=1
+echo "let a = $a"
+# multiplication
+echo "'$a * 10 = $(($a * 10))' # multiplication"
+# division
+a=10
+echo "'$a / 7 = $(($a / 7))' # integer division"
+
+# remainder (modulo)
+echo "'$a / 7 = $(($a % 7))' # modulo"
+# addition
+a=10
+echo "'$a + 7 = $(($a + 7))' # addition"
+# subtraction
+a=10
+echo "'$a - 7 = $(($a - 7))' # substraction"
+# exponentiation
+a=2
+echo "'$a ** 5 = $(($a ** 5))' # exponentiation"
+
+echo "Operator Precedence"
+# Operator Precedence
+# **
+# * / %
+# + -
+a=10
+echo "let x = $a"
+echo "$a * 2 + 1 / 2 / 2 % 2 - 1 = $(($a * 2 + 1 / 2 / 2 % 2 - 1))"
+# 10 * 2 + 1 / 2 / 2 % 2 - 1
+# 20 + 1 / 2 / 2 % 2 - 1
+# 20 + 0 / 2 % 2 - 1
+# 20 + 0 % 2 -1
+# 20 + 2 - 1
+# 19
+
+
